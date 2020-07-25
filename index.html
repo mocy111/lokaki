@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr"></div>
+            </div>
+            <div class="min">
+                <div class="mn" id="mn" ></div>
+            </div>
+            <div class="sec">
+                <div class="sc" id="sc" ></div>
+            </div>
+            <div class="digitalHour">
+                <div id="heure"></div>
+                <div id="minute"></div>
+                <div id="seconde"></div>
+                <div id=""></div>
+   
+   
+           </div>
+
+        </div> 
+        
+
+       
+
+        <script type="text/javascript">
+const hr = document.querySelector('#hr');
+const mn = document.querySelector('#mn');
+const sc = document.querySelector('#sc');
+
+setInterval(() => {  
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * 6;
+    let ss = day.getSeconds() * 6;
+
+    hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+    sc.style.transform = `rotateZ(${ss}deg)`;
+
+    let heure = document.querySelector('#heure');
+    let minute = document.querySelector('#minute');
+    let seconde = document.querySelector('#seconde');
+    
+    
+
+    let H = day.getHours();
+    let M = day.getMinutes();
+    let S = day.getSeconds();
+
+    heure.innerHTML = H + 'h:';
+    minute.innerHTML = `${M<10?'0':''}${M}` + ':';
+    seconde.innerHTML = `${S<10?'0':''}${S}`; 
+
+
+
+
+} )
+
+
+
+
+
+        </script>
+    
+</body>
+</html>
